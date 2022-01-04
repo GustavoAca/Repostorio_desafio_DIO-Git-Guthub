@@ -1,0 +1,115 @@
+Objetos fundamentais GIT(Blobs)
+
+
+echo 'conteudo' | git hash-object --stdin
+c57f1ed17015cd6c4fcc34dc84a154b1ae966102
+===========================================
+blob tamanho
+
+\0
+ola mundo
+
+===========================================
+ echo -e 'blob 9\0conteudo' | openssl sha1
+(stdin)= fc31e91b26cf85a55e072476de7f263c89260eb1
+
+o git armazena os metadados
+o blob armazena apenas o sha1
+==========================================================
+
+Objetos fundamentais  GIT(tree)
+=================================================
+Tree  <tamanho>
+\0
+blob sha1  texto.txt
+====================
+responsavel por montar estrutura de aond eesta localizada o arquivo, ela pode apontar para blobs ou para outras arvores
+====================================================
+Objetos fundamentais GIT(Commit)
+====================================================
+Commit <tamanho>
+tree		s4a5sq1
+parente 	a98acq1
+autor		perkles
+
+mensagem "inicia..."
+
+timestamp
+===================================================
+
+Chaves SSH e Token
+
+criar em github
+
+ir no git bash
+digitar
+ssh-keygen -t ed25519 -C <email>
+
+dps digite
+
+eval $(ssh-agent -s)
+
+dps
+
+ssh-add <pasta privada>
+
+clonar um repositorio
+
+git clone <ssh-copiado no github>
+
+=========================================
+chave token
+
+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
+
+clonar usanndo https
+
+===========================================
+
+Primeiros comandos 
+
+configuraçõe siniciais para dar o commit
+inserir email com
+	git config --global user.email "galadalas50@gmail.com"
+	
+inserir nome com 
+	git config --global user.name Gustavo
+	
+adicionando arquivo markdown
+um html mais humanizado, extensão .md
+
+
+git init
+
+flags
+ls -a   para ver pastas ocultas
+
+===========================================
+
+git config user.name // user.email 
+git config --global --unset user.name//user.email -- apaga email/nome 
+
+git commit -m "add commit com texto"
+git add strogonoof.md receitas/
+
+git status --ve como ta o ciclo de vida
+
+git add * --todas as alterações commitadas
+
+git config --list
+
+
+
+Enviando para o git hub
+
+git remote add origin --https do repositorio
+
+git remote -v
+
+git push origin master
+
+===============================================
+conflitos
+
+git pull origin master 
+push ultimo commit atualizado para atualização
